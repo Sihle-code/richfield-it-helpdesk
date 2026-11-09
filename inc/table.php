@@ -1,0 +1,3 @@
+<?php /* expects $recent: list of ticket rows */ if(!$recent){echo '<p class="text-muted">No tickets found.</p>';return;}?>
+<div class="table-responsive"><table class="table table-hover"><tr><th>Ticket</th><th>Title</th><th>Category</th><th>Priority</th><th>Status</th><th>Created</th></tr>
+<?php foreach($recent as $r):?><tr><td><a href="ticket.php?id=<?=$r['Ticket_ID']?>"><?=e($r['Ticket_Number'])?></a></td><td><?=e($r['Title'])?></td><td><?=e($r['Category_Name'])?></td><td><?=badge($r['Priority_Name'])?></td><td><?=e($r['Status'])?></td><td><?=e($r['Created_At'])?></td></tr><?php endforeach;?></table></div>
